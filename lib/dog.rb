@@ -1,7 +1,7 @@
 class Dog
   attr_accessor :name, :breed, :id
 
-  def initialize(id:nil, name:, breed:)
+  def initialize(id: nil, name:, breed:)
     @id = id
     @name = name
     @breed = breed
@@ -47,7 +47,7 @@ class Dog
     dog
   end
 
-  def self::find_by_id(id)
+  def self::find_by_id(id:)
     sql = "SELECT * FROM dogs WHERE id = ?"
     result = DB[:conn].execute(sql, id)[0]
     Dog.new(result[0], result[1], result[2])
