@@ -58,9 +58,9 @@ class Dog
 
   def self::find_or_create_by
     sql <<-SQL
-    SELECT * FROM dogs 
+    SELECT * FROM dogs
     SQL
-
+end
 
   def self::find_by_name
     sql = <<-SQL
