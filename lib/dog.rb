@@ -74,6 +74,10 @@ class Dog
     new_dog = dog.new(result[0], result[1], result[2])
     end
 
+    def sef::new_from_db
+
+    end
+
   def update
 
   end
