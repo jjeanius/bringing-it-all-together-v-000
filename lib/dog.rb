@@ -50,12 +50,17 @@ class Dog
 
   def self::find_by_id(id)
     sql = <<-SQL
-    SELECT * FROM dog WHERE id = ?
+    SELECT * FROM dogs WHERE id = ?
     SQL
-    result = DB[:conn].execute(sql,id)[0]
-    new_dog = dog.new(result[0], result[1], result[2])
-    New_dog
+    result = DB[:conn].execute(sql, id)[0]
+    Dog.new(result[0], result[1], result[2])
   end
+
+  def self::find_or_create_by
+    sql <<-SQL
+    SELECT * FROM dogs 
+    SQL
+
 
   def self::find_by_name
     sql = <<-SQL
